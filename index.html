@@ -2,39 +2,1360 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>代俊希 | Dai Junxi</title>
-    <meta name="description" content="代俊希（Dai Junxi）的个人主页、项目与兴趣介绍">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="代俊希 Dai Junxi — AI × Cryptocurrency × Finance × Quantitative Research × Technology">
+
+    <meta name="keywords"
+          content="代俊希, Dai Junxi, AI, Cryptocurrency, Crypto, Finance, Quantitative Trading, Artificial Intelligence, Technology">
+
+    <meta name="author"
+          content="Dai Junxi">
+
+    <meta name="theme-color"
+          content="#0b0d12">
+
+    <title>代俊希 · Dai Junxi</title>
+
+    <style>
+
+        /* =========================
+           基础设置
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            color: #f5f5f7;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(0, 122, 255, 0.20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(175, 82, 222, 0.18),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(52, 199, 89, 0.12),
+                    transparent 35%
+                ),
+                #07080c;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           背景动态光晕
+        ========================= */
+
+        .orb {
+            position: fixed;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            opacity: 0.35;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .orb.one {
+            background: #007aff;
+
+            top: 5%;
+            left: -100px;
+        }
+
+        .orb.two {
+            background: #af52de;
+
+            top: 35%;
+            right: -120px;
+
+            animation-delay: -4s;
+        }
+
+        .orb.three {
+            background: #34c759;
+
+            bottom: -100px;
+            left: 30%;
+
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(20px, -30px, 0) scale(1.1);
+            }
+        }
+
+        /* =========================
+           导航栏
+        ========================= */
+
+        nav {
+            position: fixed;
+
+            top: 20px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(1100px, calc(100% - 32px));
+
+            padding: 12px 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.72);
+
+            text-decoration: none;
+
+            padding: 8px 13px;
+
+            border-radius: 14px;
+
+            font-size: 14px;
+
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+
+            background:
+                rgba(255,255,255,0.10);
+        }
+
+        /* =========================
+           通用玻璃卡片
+        ========================= */
+
+        .glass {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.045)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.13);
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,0.25),
+                inset 0 1px 0 rgba(255,255,255,0.10);
+
+            backdrop-filter:
+                blur(30px) saturate(160%);
+
+            -webkit-backdrop-filter:
+                blur(30px) saturate(160%);
+
+            border-radius: 32px;
+        }
+
+        /* =========================
+           主容器
+        ========================= */
+
+        main {
+            width: min(1100px, calc(100% - 32px));
+
+            margin: auto;
+        }
+
+        /* =========================
+           Hero
+        ========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding-top: 100px;
+        }
+
+        .hero-card {
+
+            width: 100%;
+
+            padding: 70px 60px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,122,255,0.25),
+                    transparent 70%
+                );
+
+            top: -180px;
+            right: -100px;
+
+            pointer-events: none;
+        }
+
+        .status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(52,199,89,0.10);
+
+            border:
+                1px solid rgba(52,199,89,0.20);
+
+            color: #b7f5c5;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #34c759;
+
+            box-shadow:
+                0 0 12px #34c759;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(46px, 8vw, 92px);
+
+            line-height: 0.95;
+
+            letter-spacing: -0.065em;
+
+            margin-bottom: 22px;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #ffffff 20%,
+                    #b7c9ff 50%,
+                    #d5b6ff 80%
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+
+            font-size: clamp(18px, 3vw, 27px);
+
+            color: rgba(255,255,255,0.78);
+
+            margin-bottom: 25px;
+
+            letter-spacing: -0.02em;
+        }
+
+        .hero-description {
+
+            max-width: 760px;
+
+            color:
+                rgba(255,255,255,0.58);
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 13px 20px;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition:
+                transform .25s,
+                background .25s;
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+        }
+
+        .button:hover {
+
+            transform:
+                translateY(-3px);
+        }
+
+        .button.primary {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #007aff,
+                    #5856d6
+                );
+
+            box-shadow:
+                0 10px 30px rgba(0,122,255,0.25);
+        }
+
+        .button.secondary {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.07);
+        }
+
+        /* =========================
+           Section
+        ========================= */
+
+        section {
+
+            padding: 80px 0;
+        }
+
+        .section-title {
+
+            font-size: 40px;
+
+            letter-spacing: -0.04em;
+
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+
+            color:
+                rgba(255,255,255,0.55);
+
+            margin-bottom: 30px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           About
+        ========================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 0.8fr;
+
+            gap: 20px;
+        }
+
+        .about-card {
+
+            padding: 35px;
+        }
+
+        .about-card p {
+
+            color:
+                rgba(255,255,255,0.68);
+
+            line-height: 1.9;
+
+            margin-bottom: 16px;
+        }
+
+        .quote {
+
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-left:
+                3px solid #007aff;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border-radius: 0 18px 18px 0;
+
+            color:
+                rgba(255,255,255,0.85);
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           Focus
+        ========================= */
+
+        .focus-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .focus-card {
+
+            padding: 28px;
+
+            transition:
+                transform .25s,
+                border-color .25s;
+        }
+
+        .focus-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(255,255,255,0.25);
+        }
+
+        .icon {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .focus-card h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+        .focus-card p {
+
+            color:
+                rgba(255,255,255,0.55);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           Projects
+        ========================= */
+
+        .projects {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+
+            padding: 30px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform .25s;
+        }
+
+        .project:hover {
+
+            transform:
+                translateY(-5px);
+        }
+
+        .project-number {
+
+            color:
+                rgba(255,255,255,0.25);
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .project h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+        .project p {
+
+            color:
+                rgba(255,255,255,0.58);
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .tag {
+
+            display: inline-block;
+
+            padding: 7px 11px;
+
+            margin: 3px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.07);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            font-size: 12px;
+
+            color:
+                rgba(255,255,255,0.68);
+        }
+
+        /* =========================
+           Philosophy
+        ========================= */
+
+        .philosophy {
+
+            padding: 60px 40px;
+
+            text-align: center;
+        }
+
+        .philosophy-text {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            font-size:
+                clamp(24px, 4vw, 42px);
+
+            line-height: 1.3;
+
+            letter-spacing: -0.035em;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #ffffff,
+                    #9caeff,
+                    #d5a9ff
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* =========================
+           Contact
+        ========================= */
+
+        .contact {
+
+            text-align: center;
+
+            padding: 70px 30px;
+        }
+
+        .contact p {
+
+            color:
+                rgba(255,255,255,0.55);
+
+            margin:
+                15px auto 30px;
+
+            max-width: 600px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+
+            padding: 40px 20px 60px;
+
+            text-align: center;
+
+            color:
+                rgba(255,255,255,0.35);
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           移动端
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            nav {
+
+                top: 12px;
+
+                width:
+                    calc(100% - 20px);
+            }
+
+            .nav-links {
+
+                display: none;
+            }
+
+            .hero {
+
+                padding-top: 90px;
+            }
+
+            .hero-card {
+
+                padding: 45px 25px;
+            }
+
+            .hero h1 {
+
+                font-size: 55px;
+            }
+
+            .about-grid,
+            .focus-grid,
+            .projects {
+
+                grid-template-columns: 1fr;
+            }
+
+            .about-card,
+            .focus-card,
+            .project {
+
+                padding: 25px;
+            }
+
+            section {
+
+                padding: 55px 0;
+            }
+
+            .section-title {
+
+                font-size: 32px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-<h1>代俊希 · Dai Junxi</h1>
+    <!-- 动态背景 -->
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
 
-<p>Welcome to my personal website.</p>
 
-<h2>关于我</h2>
+    <!-- =========================
+         导航
+    ========================== -->
 
-<p>
-我是代俊希（Dai Junxi），对计算机科学、人工智能、
-编程、历史、哲学等领域感兴趣。
-</p>
+    <nav>
 
-<h2>我的项目</h2>
+        <div class="nav-logo">
+            DJX
+        </div>
 
-<ul>
-    <li>AI Projects</li>
-    <li>Python Projects</li>
-    <li>Quantitative Trading</li>
-    <li>Open Source Projects</li>
-</ul>
+        <div class="nav-links">
 
-<h2>GitHub</h2>
+            <a href="#about">
+                关于
+            </a>
 
-<p>
-<a href="https://github.com/你的用户名">
-GitHub Profile
-</a>
-</p>
+            <a href="#focus">
+                方向
+            </a>
+
+            <a href="#projects">
+                项目
+            </a>
+
+            <a href="#philosophy">
+                思想
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- =========================
+             Hero
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-card glass">
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    Exploring · Building · Learning
+
+                </div>
+
+
+                <h1>
+                    代俊希
+                </h1>
+
+
+                <div class="hero-subtitle">
+
+                    Dai Junxi · AI × Crypto × Finance
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    独立研究者与技术探索者，长期关注
+                    <strong>人工智能、加密货币、金融市场、
+                    量化交易与计算机技术</strong>。
+
+                    致力于探索 AI、金融数据与软件技术之间的交叉领域，
+                    并通过实际项目验证想法。
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <!-- 修改为你的 GitHub -->
+                    <a
+                        class="button primary"
+                        href="https://github.com/你的用户名"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+
+
+                    <a
+                        class="button secondary"
+                        href="#projects"
+                    >
+                        查看项目
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             About
+        ========================== -->
+
+        <section id="about">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <p class="section-description">
+                关于我
+            </p>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-card glass">
+
+                    <p>
+                        我是
+                        <strong>代俊希（Dai Junxi）</strong>，
+                        一个对技术、金融与人工智能保持长期兴趣的独立探索者。
+                    </p>
+
+                    <p>
+                        我关注人工智能的发展、数字资产与区块链、
+                        金融市场、量化研究以及计算机科学，
+                        尝试寻找这些领域之间可以产生的新连接。
+                    </p>
+
+                    <p>
+                        我的 GitHub 用于记录个人项目、
+                        技术实验、研究思路以及开源作品。
+                    </p>
+
+
+                    <div class="quote">
+
+                        「保持好奇，独立思考，
+                        用事实验证观点，用代码实现想法。」
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-card glass">
+
+                    <h3>
+                        Core Interests
+                    </h3>
+
+                    <br>
+
+                    <p>
+                        Artificial Intelligence
+                    </p>
+
+                    <p>
+                        Cryptocurrency
+                    </p>
+
+                    <p>
+                        Financial Markets
+                    </p>
+
+                    <p>
+                        Quantitative Research
+                    </p>
+
+                    <p>
+                        Computer Science
+                    </p>
+
+                    <p>
+                        Open Source
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Research Focus
+        ========================== -->
+
+        <section id="focus">
+
+            <h2 class="section-title">
+                Research Focus
+            </h2>
+
+            <p class="section-description">
+                我目前关注的主要领域
+            </p>
+
+
+            <div class="focus-grid">
+
+
+                <div class="focus-card glass">
+
+                    <div class="icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Artificial Intelligence
+                    </h3>
+
+                    <p>
+                        AI、机器学习、智能系统、
+                        AI Agent、自动化与生成式人工智能。
+                    </p>
+
+                </div>
+
+
+                <div class="focus-card glass">
+
+                    <div class="icon">
+                        ₿
+                    </div>
+
+                    <h3>
+                        Cryptocurrency
+                    </h3>
+
+                    <p>
+                        加密货币、区块链、数字资产、
+                        Web3 与去中心化技术。
+                    </p>
+
+                </div>
+
+
+                <div class="focus-card glass">
+
+                    <div class="icon">
+                        📈
+                    </div>
+
+                    <h3>
+                        Finance
+                    </h3>
+
+                    <p>
+                        金融市场、投资研究、
+                        市场结构、风险管理与金融科技。
+                    </p>
+
+                </div>
+
+
+                <div class="focus-card glass">
+
+                    <div class="icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Quantitative Research
+                    </h3>
+
+                    <p>
+                        数据分析、量化策略、
+                        算法交易与金融数据建模。
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Projects
+        ========================== -->
+
+        <section id="projects">
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+            <p class="section-description">
+                项目与技术实验
+            </p>
+
+
+            <div class="projects">
+
+
+                <div class="project glass">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>
+                        AI Quant System
+                    </h3>
+
+                    <p>
+                        探索人工智能与量化交易结合的实验性系统，
+                        用于金融数据分析、市场研究与策略辅助。
+                    </p>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        AI
+                    </span>
+
+                    <span class="tag">
+                        Quant
+                    </span>
+
+                    <span class="tag">
+                        Finance
+                    </span>
+
+                </div>
+
+
+
+                <div class="project glass">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>
+                        Crypto Research
+                    </h3>
+
+                    <p>
+                        加密货币市场数据研究与分析，
+                        探索市场结构、价格行为和数据驱动分析方法。
+                    </p>
+
+                    <span class="tag">
+                        Crypto
+                    </span>
+
+                    <span class="tag">
+                        Blockchain
+                    </span>
+
+                    <span class="tag">
+                        Data
+                    </span>
+
+                </div>
+
+
+
+                <div class="project glass">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h3>
+                        AI Financial Assistant
+                    </h3>
+
+                    <p>
+                        探索使用大型语言模型辅助金融信息整理、
+                        市场研究与投资分析工作流。
+                    </p>
+
+                    <span class="tag">
+                        LLM
+                    </span>
+
+                    <span class="tag">
+                        AI
+                    </span>
+
+                    <span class="tag">
+                        Finance
+                    </span>
+
+                </div>
+
+
+
+                <div class="project glass">
+
+                    <div class="project-number">
+                        PROJECT 04
+                    </div>
+
+                    <h3>
+                        Open Source Experiments
+                    </h3>
+
+                    <p>
+                        记录个人的软件开发、自动化、
+                        AI 与计算机技术实验。
+                    </p>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Open Source
+                    </span>
+
+                    <span class="tag">
+                        Technology
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Philosophy
+        ========================== -->
+
+        <section id="philosophy">
+
+            <div class="philosophy glass">
+
+                <div class="philosophy-text">
+
+                    Technology changes how we build.<br>
+
+                    AI changes how we think.<br>
+
+                    Finance changes how value moves.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             Contact
+        ========================== -->
+
+        <section>
+
+            <div class="contact glass">
+
+                <h2 class="section-title">
+                    Let's Connect
+                </h2>
+
+                <p>
+
+                    欢迎关注我的 GitHub，
+                    这里会持续更新我的项目、研究和技术实验。
+
+                </p>
+
+
+                <div class="buttons"
+                     style="justify-content:center;">
+
+                    <a
+                        class="button primary"
+                        href="https://github.com/你的用户名"
+                        target="_blank"
+                    >
+                        Visit GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        © 2026 Dai Junxi ·
+        AI · Crypto · Finance · Technology
+
+    </footer>
+
+
+    <!-- =========================
+         简单的鼠标液态光效
+    ========================== -->
+
+    <script>
+
+        document.addEventListener(
+            "mousemove",
+            function(e) {
+
+                const x =
+                    e.clientX / window.innerWidth * 100;
+
+                const y =
+                    e.clientY / window.innerHeight * 100;
+
+                document.body.style.background =
+                    `
+                    radial-gradient(
+                        circle at ${x}% ${y}%,
+                        rgba(0,122,255,0.10),
+                        transparent 30%
+                    ),
+                    radial-gradient(
+                        circle at 15% 15%,
+                        rgba(0,122,255,0.20),
+                        transparent 30%
+                    ),
+                    radial-gradient(
+                        circle at 85% 20%,
+                        rgba(175,82,222,0.18),
+                        transparent 30%
+                    ),
+                    #07080c
+                    `;
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
