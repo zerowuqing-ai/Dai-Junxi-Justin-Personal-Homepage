@@ -1,10 +1,10 @@
-代俊希 · Dai Junxi
+Justin Dai
 
 AI × Crypto × Finance × Technology
 
 欢迎来到我的 GitHub 个人主页。
 
-我是 代俊希（Dai Junxi），一名专注于 人工智能、加密货币、金融投资与计算机技术 的独立研究者与技术探索者。
+我是 Justin Dai ，一名专注于 人工智能、加密货币、金融投资与计算机技术 的独立研究者与技术探索者。
 
 我的长期兴趣与研究方向包括：
 
@@ -63,8 +63,8 @@ Stay curious. Think independently. Build something useful.
 
 ---
 
-Dai Junxi
+Justin Dai
 
 AI · Cryptocurrency · Finance · Quantitative Research · Technology
 
-© 2026 Dai Junxi
+© 2026 Justin Dai
