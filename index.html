@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#050507">
+<meta name="theme-color" content="#050507">
 
-    <meta name="description"
-          content="Justin — AI, Cryptocurrency, Finance, Quantitative Research and Technology.">
+<meta name="description"
+content="Justin — AI, Cryptocurrency, Finance, Quantitative Research and Technology.">
 
-    <meta name="keywords"
-          content="Justin, zerowuqing-ai, AI, Artificial Intelligence, Cryptocurrency, Crypto, Finance, Quantitative Research, Technology">
+<meta name="keywords"
+content="Justin, zerowuqing-ai, AI, Artificial Intelligence, Cryptocurrency, Crypto, Finance, Quantitative Research, Technology, 人工智能, 加密货币, 金融, 量化">
 
-    <meta name="author"
-          content="Justin">
+<meta name="author" content="Justin">
 
-    <meta property="og:title"
-          content="Justin — AI × Crypto × Finance">
-
-    <meta property="og:description"
-          content="Independent technology explorer focused on AI, cryptocurrency, finance and quantitative research.">
-
-    <title>Justin — AI × Crypto × Finance</title>
-
+<title>Justin — AI × Crypto × Finance</title>
 
 <style>
 
@@ -51,6 +42,8 @@ body {
         "SF Pro Text",
         "Helvetica Neue",
         Arial,
+        "PingFang SC",
+        "Microsoft YaHei",
         sans-serif;
 
     color: #f5f5f7;
@@ -94,10 +87,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-
-    background:
-        rgba(255,255,255,.18);
-
+    background: rgba(255,255,255,.18);
     border-radius: 10px;
 }
 
@@ -119,7 +109,6 @@ body {
     overflow: hidden;
 }
 
-
 .orb {
 
     position: absolute;
@@ -137,7 +126,6 @@ body {
         floating 14s ease-in-out infinite;
 }
 
-
 .orb-blue {
 
     background: #007aff;
@@ -145,7 +133,6 @@ body {
     left: -120px;
     top: 5%;
 }
-
 
 .orb-purple {
 
@@ -157,7 +144,6 @@ body {
     animation-delay: -5s;
 }
 
-
 .orb-green {
 
     background: #34c759;
@@ -167,7 +153,6 @@ body {
 
     animation-delay: -9s;
 }
-
 
 @keyframes floating {
 
@@ -291,10 +276,10 @@ body {
     width:
         min(1120px, calc(100% - 30px));
 
-    height: 64px;
+    min-height: 64px;
 
     padding:
-        0 18px;
+        8px 12px 8px 20px;
 
     display: flex;
 
@@ -336,7 +321,6 @@ body {
         -.04em;
 }
 
-
 .logo span {
 
     color:
@@ -347,13 +331,25 @@ body {
 }
 
 
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
 .nav-links {
 
     display: flex;
 
     gap: 5px;
 }
-
 
 .nav-links a {
 
@@ -376,13 +372,82 @@ body {
         .25s ease;
 }
 
-
 .nav-links a:hover {
 
     color: white;
 
     background:
         rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   LANGUAGE SWITCH
+========================================================= */
+
+.language-switch {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 3px;
+
+    margin-left: 5px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+.lang-btn {
+
+    border: none;
+
+    color:
+        rgba(255,255,255,.5);
+
+    background:
+        transparent;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    padding:
+        7px 9px;
+
+    border-radius:
+        10px;
+
+    transition:
+        .25s ease;
+}
+
+.lang-btn:hover {
+
+    color: white;
+}
+
+.lang-btn.active {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.13);
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.18);
 }
 
 
@@ -405,7 +470,6 @@ body {
         100px;
 }
 
-
 .hero-card {
 
     width: 100%;
@@ -422,7 +486,6 @@ body {
     isolation:
         isolate;
 }
-
 
 .hero-card::before {
 
@@ -457,7 +520,6 @@ body {
         -1;
 }
 
-
 .hero-card::after {
 
     content: "";
@@ -481,7 +543,6 @@ body {
     pointer-events:
         none;
 }
-
 
 .availability {
 
@@ -517,7 +578,6 @@ body {
         28px;
 }
 
-
 .availability-dot {
 
     width:
@@ -536,7 +596,6 @@ body {
         0 0 15px
         rgba(52,199,89,.9);
 }
-
 
 .hero h1 {
 
@@ -567,7 +626,6 @@ body {
         transparent;
 }
 
-
 .hero-title {
 
     font-size:
@@ -582,7 +640,6 @@ body {
     margin-bottom:
         22px;
 }
-
 
 .hero-description {
 
@@ -601,7 +658,6 @@ body {
     margin-bottom:
         35px;
 }
-
 
 .hero-description strong {
 
@@ -628,7 +684,6 @@ body {
     gap:
         12px;
 }
-
 
 .button {
 
@@ -665,13 +720,11 @@ body {
         background .25s ease;
 }
 
-
 .button:hover {
 
     transform:
         translateY(-3px);
 }
-
 
 .primary {
 
@@ -690,14 +743,12 @@ body {
         rgba(0,122,255,.28);
 }
 
-
 .primary:hover {
 
     box-shadow:
         0 18px 45px
         rgba(0,122,255,.4);
 }
-
 
 .secondary {
 
@@ -723,7 +774,6 @@ section {
         95px 0;
 }
 
-
 .section-label {
 
     color:
@@ -742,7 +792,6 @@ section {
         12px;
 }
 
-
 .section-title {
 
     font-size:
@@ -757,7 +806,6 @@ section {
     margin-bottom:
         15px;
 }
-
 
 .section-description {
 
@@ -791,13 +839,11 @@ section {
         20px;
 }
 
-
 .about-card {
 
     padding:
         38px;
 }
-
 
 .about-card p {
 
@@ -811,13 +857,11 @@ section {
         18px;
 }
 
-
 .about-card strong {
 
     color:
         rgba(255,255,255,.9);
 }
-
 
 .quote {
 
@@ -864,7 +908,6 @@ section {
         20px;
 }
 
-
 .interest {
 
     padding:
@@ -889,7 +932,7 @@ section {
 
 
 /* =========================================================
-   FOCUS GRID
+   FOCUS
 ========================================================= */
 
 .focus-grid {
@@ -904,7 +947,6 @@ section {
         18px;
 }
 
-
 .focus-card {
 
     padding:
@@ -915,7 +957,6 @@ section {
         border-color .3s ease,
         background .3s ease;
 }
-
 
 .focus-card:hover {
 
@@ -933,7 +974,6 @@ section {
         );
 }
 
-
 .icon {
 
     font-size:
@@ -942,7 +982,6 @@ section {
     margin-bottom:
         20px;
 }
-
 
 .focus-card h3 {
 
@@ -955,7 +994,6 @@ section {
     letter-spacing:
         -.025em;
 }
-
 
 .focus-card p {
 
@@ -986,7 +1024,6 @@ section {
         20px;
 }
 
-
 .project {
 
     padding:
@@ -1002,13 +1039,11 @@ section {
         transform .3s ease;
 }
 
-
 .project:hover {
 
     transform:
         translateY(-7px);
 }
-
 
 .project-number {
 
@@ -1025,7 +1060,6 @@ section {
         24px;
 }
 
-
 .project h3 {
 
     font-size:
@@ -1037,7 +1071,6 @@ section {
     margin-bottom:
         12px;
 }
-
 
 .project p {
 
@@ -1054,7 +1087,6 @@ section {
         20px;
 }
 
-
 .tags {
 
     display:
@@ -1066,7 +1098,6 @@ section {
     gap:
         6px;
 }
-
 
 .tag {
 
@@ -1104,7 +1135,6 @@ section {
         25px;
 }
 
-
 .timeline::before {
 
     content: "";
@@ -1128,7 +1158,6 @@ section {
         rgba(255,255,255,.12);
 }
 
-
 .timeline-item {
 
     position:
@@ -1137,7 +1166,6 @@ section {
     padding:
         0 0 35px 38px;
 }
-
 
 .timeline-dot {
 
@@ -1167,7 +1195,6 @@ section {
         rgba(0,122,255,.7);
 }
 
-
 .timeline-item h3 {
 
     font-size:
@@ -1176,7 +1203,6 @@ section {
     margin-bottom:
         6px;
 }
-
 
 .timeline-item p {
 
@@ -1209,7 +1235,6 @@ section {
     overflow:
         hidden;
 }
-
 
 .philosophy::before {
 
@@ -1246,7 +1271,6 @@ section {
     pointer-events:
         none;
 }
-
 
 .philosophy-text {
 
@@ -1297,7 +1321,6 @@ section {
         75px 30px;
 }
 
-
 .contact p {
 
     max-width:
@@ -1335,7 +1358,7 @@ footer {
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal {
@@ -1350,7 +1373,6 @@ footer {
         opacity .8s ease,
         transform .8s ease;
 }
-
 
 .reveal.active {
 
@@ -1374,7 +1396,6 @@ footer {
             calc(100% - 22px);
     }
 
-
     .nav {
 
         top:
@@ -1383,10 +1404,15 @@ footer {
         width:
             calc(100% - 18px);
 
-        height:
+        min-height:
             58px;
-    }
 
+        padding-left:
+            16px;
+
+        padding-right:
+            7px;
+    }
 
     .nav-links {
 
@@ -1394,6 +1420,11 @@ footer {
             none;
     }
 
+    .nav-right {
+
+        gap:
+            3px;
+    }
 
     .hero {
 
@@ -1401,13 +1432,11 @@ footer {
             85px;
     }
 
-
     .hero-card {
 
         padding:
             55px 27px;
     }
-
 
     .hero h1 {
 
@@ -1415,13 +1444,11 @@ footer {
             65px;
     }
 
-
     .hero-description {
 
         font-size:
             15px;
     }
-
 
     .about-grid,
     .focus-grid,
@@ -1431,7 +1458,6 @@ footer {
             1fr;
     }
 
-
     .about-card,
     .focus-card,
     .project {
@@ -1440,18 +1466,22 @@ footer {
             27px;
     }
 
-
     section {
 
         padding:
             65px 0;
     }
 
-
     .philosophy {
 
         padding:
             60px 25px;
+    }
+
+    .language-switch {
+
+        margin-left:
+            2px;
     }
 
 }
@@ -1480,7 +1510,6 @@ footer {
 }
 
 </style>
-
 </head>
 
 
@@ -1501,6 +1530,7 @@ footer {
 
 </div>
 
+
 <div class="cursor-light"></div>
 
 
@@ -1515,23 +1545,57 @@ footer {
         Justin <span>·</span> 01
     </div>
 
-    <div class="nav-links">
 
-        <a href="#about">
-            About
-        </a>
+    <div class="nav-right">
 
-        <a href="#focus">
-            Focus
-        </a>
+        <div class="nav-links">
 
-        <a href="#projects">
-            Projects
-        </a>
+            <a href="#about"
+               data-i18n="nav_about">
+                About
+            </a>
 
-        <a href="#philosophy">
-            Philosophy
-        </a>
+            <a href="#focus"
+               data-i18n="nav_focus">
+                Focus
+            </a>
+
+            <a href="#projects"
+               data-i18n="nav_projects">
+                Projects
+            </a>
+
+            <a href="#philosophy"
+               data-i18n="nav_philosophy">
+                Philosophy
+            </a>
+
+        </div>
+
+
+        <!-- LANGUAGE SWITCH -->
+
+        <div class="language-switch">
+
+            <button
+                class="lang-btn"
+                id="enBtn"
+                onclick="setLanguage('en')">
+
+                EN
+
+            </button>
+
+            <button
+                class="lang-btn"
+                id="zhBtn"
+                onclick="setLanguage('zh')">
+
+                中
+
+            </button>
+
+        </div>
 
     </div>
 
@@ -1554,7 +1618,9 @@ footer {
 
             <span class="availability-dot"></span>
 
-            Exploring · Building · Learning
+            <span data-i18n="availability">
+                Exploring · Building · Learning
+            </span>
 
         </div>
 
@@ -1564,23 +1630,25 @@ footer {
         </h1>
 
 
-        <div class="hero-title">
+        <div class="hero-title"
+             data-i18n="hero_title">
 
             AI × Cryptocurrency × Finance × Technology
 
         </div>
 
 
-        <p class="hero-description">
+        <p class="hero-description"
+           data-i18n="hero_description">
 
             An independent technology explorer focused on
-            <strong>Artificial Intelligence, Cryptocurrency,
+            Artificial Intelligence, Cryptocurrency,
             Financial Markets, Quantitative Research,
-            and Computer Science.</strong>
-
+            and Computer Science.
             I explore the intersection of intelligent systems,
-            financial technology and software — turning ideas
-            into experiments, research and real-world projects.
+            financial technology and software —
+            turning ideas into experiments,
+            research and real-world projects.
 
         </p>
 
@@ -1590,17 +1658,20 @@ footer {
             <a
                 href="https://github.com/zerowuqing-ai"
                 target="_blank"
-                class="button primary"
-            >
+                class="button primary">
+
                 GitHub ↗
+
             </a>
 
 
             <a
                 href="#projects"
                 class="button secondary"
-            >
+                data-i18n="explore_projects">
+
                 Explore Projects ↓
+
             </a>
 
         </div>
@@ -1617,15 +1688,24 @@ footer {
 
 <section id="about" class="reveal">
 
-    <div class="section-label">
+    <div class="section-label"
+         data-i18n="about_label">
+
         01 · ABOUT
+
     </div>
 
-    <h2 class="section-title">
+
+    <h2 class="section-title"
+        data-i18n="about_title">
+
         About Me
+
     </h2>
 
-    <p class="section-description">
+
+    <p class="section-description"
+       data-i18n="about_description">
 
         Technology, markets and intelligence —
         three areas that continuously shape my thinking.
@@ -1638,17 +1718,16 @@ footer {
 
         <div class="about-card glass">
 
-            <p>
+            <p data-i18n="about_p1">
 
-                I'm <strong>Justin</strong>,
-                an independent technology explorer
-                interested in the rapidly changing
-                intersection of AI, finance and technology.
+                I'm Justin, an independent technology explorer
+                interested in the rapidly changing intersection
+                of AI, finance and technology.
 
             </p>
 
 
-            <p>
+            <p data-i18n="about_p2">
 
                 My interests span artificial intelligence,
                 cryptocurrency, blockchain, financial markets,
@@ -1657,7 +1736,7 @@ footer {
             </p>
 
 
-            <p>
+            <p data-i18n="about_p3">
 
                 This website and my GitHub profile serve as
                 a public record of projects, experiments,
@@ -1666,7 +1745,8 @@ footer {
             </p>
 
 
-            <div class="quote">
+            <div class="quote"
+                 data-i18n="quote">
 
                 "Stay curious. Think independently.
                 Build, test, learn, and improve."
@@ -1679,7 +1759,7 @@ footer {
 
         <div class="about-card glass">
 
-            <h3>
+            <h3 data-i18n="core_interests">
                 Core Interests
             </h3>
 
@@ -1687,7 +1767,7 @@ footer {
             <div class="interest-list">
 
                 <span class="interest">
-                    Artificial Intelligence
+                    AI
                 </span>
 
                 <span class="interest">
@@ -1734,15 +1814,24 @@ footer {
 
 <section id="focus" class="reveal">
 
-    <div class="section-label">
+    <div class="section-label"
+         data-i18n="focus_label">
+
         02 · FOCUS
+
     </div>
 
-    <h2 class="section-title">
+
+    <h2 class="section-title"
+        data-i18n="focus_title">
+
         Areas of Focus
+
     </h2>
 
-    <p class="section-description">
+
+    <p class="section-description"
+       data-i18n="focus_description">
 
         Exploring the intersection of intelligence,
         capital and computation.
@@ -1759,11 +1848,11 @@ footer {
                 ◉
             </div>
 
-            <h3>
+            <h3 data-i18n="ai_title">
                 Artificial Intelligence
             </h3>
 
-            <p>
+            <p data-i18n="ai_text">
 
                 Generative AI, large language models,
                 intelligent agents, automation,
@@ -1781,11 +1870,11 @@ footer {
                 ₿
             </div>
 
-            <h3>
+            <h3 data-i18n="crypto_title">
                 Cryptocurrency
             </h3>
 
-            <p>
+            <p data-i18n="crypto_text">
 
                 Digital assets, blockchain technology,
                 decentralized systems, crypto markets
@@ -1803,11 +1892,11 @@ footer {
                 ↗
             </div>
 
-            <h3>
+            <h3 data-i18n="finance_title">
                 Finance & Markets
             </h3>
 
-            <p>
+            <p data-i18n="finance_text">
 
                 Financial markets, market structure,
                 investment research, risk analysis
@@ -1825,11 +1914,11 @@ footer {
                 ∑
             </div>
 
-            <h3>
+            <h3 data-i18n="quant_title">
                 Quantitative Research
             </h3>
 
-            <p>
+            <p data-i18n="quant_text">
 
                 Financial data analysis, systematic research,
                 algorithmic strategies, modeling
@@ -1851,15 +1940,24 @@ footer {
 
 <section id="projects" class="reveal">
 
-    <div class="section-label">
+    <div class="section-label"
+         data-i18n="projects_label">
+
         03 · PROJECTS
+
     </div>
 
-    <h2 class="section-title">
+
+    <h2 class="section-title"
+        data-i18n="projects_title">
+
         Selected Projects
+
     </h2>
 
-    <p class="section-description">
+
+    <p class="section-description"
+       data-i18n="projects_description">
 
         A growing collection of experiments,
         research systems and open-source projects.
@@ -1876,11 +1974,11 @@ footer {
                 PROJECT 01
             </div>
 
-            <h3>
+            <h3 data-i18n="project1_title">
                 AI Quant Research
             </h3>
 
-            <p>
+            <p data-i18n="project1_text">
 
                 Experimental research into combining
                 artificial intelligence with financial
@@ -1891,11 +1989,8 @@ footer {
             <div class="tags">
 
                 <span class="tag">Python</span>
-
                 <span class="tag">AI</span>
-
                 <span class="tag">Quant</span>
-
                 <span class="tag">Finance</span>
 
             </div>
@@ -1910,11 +2005,11 @@ footer {
                 PROJECT 02
             </div>
 
-            <h3>
+            <h3 data-i18n="project2_title">
                 Crypto Analytics
             </h3>
 
-            <p>
+            <p data-i18n="project2_text">
 
                 Exploring cryptocurrency market data,
                 blockchain ecosystems and quantitative
@@ -1925,11 +2020,8 @@ footer {
             <div class="tags">
 
                 <span class="tag">Crypto</span>
-
                 <span class="tag">Blockchain</span>
-
                 <span class="tag">Data</span>
-
                 <span class="tag">Research</span>
 
             </div>
@@ -1944,11 +2036,11 @@ footer {
                 PROJECT 03
             </div>
 
-            <h3>
+            <h3 data-i18n="project3_title">
                 AI Financial Assistant
             </h3>
 
-            <p>
+            <p data-i18n="project3_text">
 
                 Exploring how large language models
                 can assist with financial information,
@@ -1959,11 +2051,8 @@ footer {
             <div class="tags">
 
                 <span class="tag">LLM</span>
-
                 <span class="tag">AI</span>
-
                 <span class="tag">Finance</span>
-
                 <span class="tag">Automation</span>
 
             </div>
@@ -1978,11 +2067,11 @@ footer {
                 PROJECT 04
             </div>
 
-            <h3>
+            <h3 data-i18n="project4_title">
                 Open Source Lab
             </h3>
 
-            <p>
+            <p data-i18n="project4_text">
 
                 A collection of software experiments,
                 automation tools, technical research
@@ -1993,11 +2082,8 @@ footer {
             <div class="tags">
 
                 <span class="tag">Open Source</span>
-
                 <span class="tag">Python</span>
-
                 <span class="tag">Software</span>
-
                 <span class="tag">Technology</span>
 
             </div>
@@ -2011,20 +2097,29 @@ footer {
 
 
 <!-- =====================================================
-     TIMELINE
+     JOURNEY
 ===================================================== -->
 
 <section class="reveal">
 
-    <div class="section-label">
+    <div class="section-label"
+         data-i18n="journey_label">
+
         04 · JOURNEY
+
     </div>
 
-    <h2 class="section-title">
+
+    <h2 class="section-title"
+        data-i18n="journey_title">
+
         Learning Journey
+
     </h2>
 
-    <p class="section-description">
+
+    <p class="section-description"
+       data-i18n="journey_description">
 
         Continuous learning through research,
         experimentation and building.
@@ -2039,11 +2134,11 @@ footer {
 
             <div class="timeline-dot"></div>
 
-            <h3>
+            <h3 data-i18n="journey1_title">
                 Technology
             </h3>
 
-            <p>
+            <p data-i18n="journey1_text">
 
                 Exploring programming, software engineering,
                 computer science and open-source technologies.
@@ -2058,11 +2153,11 @@ footer {
 
             <div class="timeline-dot"></div>
 
-            <h3>
+            <h3 data-i18n="journey2_title">
                 Artificial Intelligence
             </h3>
 
-            <p>
+            <p data-i18n="journey2_text">
 
                 Studying modern AI systems,
                 large language models,
@@ -2078,11 +2173,11 @@ footer {
 
             <div class="timeline-dot"></div>
 
-            <h3>
+            <h3 data-i18n="journey3_title">
                 Finance & Quantitative Research
             </h3>
 
-            <p>
+            <p data-i18n="journey3_text">
 
                 Exploring financial markets,
                 quantitative analysis,
@@ -2098,11 +2193,11 @@ footer {
 
             <div class="timeline-dot"></div>
 
-            <h3>
+            <h3 data-i18n="journey4_title">
                 The Next Chapter
             </h3>
 
-            <p>
+            <p data-i18n="journey4_text">
 
                 Building increasingly sophisticated systems
                 at the intersection of AI, finance and technology.
@@ -2126,12 +2221,16 @@ footer {
 
     <div class="philosophy glass">
 
-        <div class="section-label">
+        <div class="section-label"
+             data-i18n="philosophy_label">
+
             05 · PHILOSOPHY
+
         </div>
 
 
-        <div class="philosophy-text">
+        <div class="philosophy-text"
+             data-i18n="philosophy_text">
 
             Technology changes how we build.<br>
 
@@ -2155,17 +2254,23 @@ footer {
 
     <div class="contact glass">
 
-        <div class="section-label">
+        <div class="section-label"
+             data-i18n="connect_label">
+
             06 · CONNECT
+
         </div>
 
 
-        <h2 class="section-title">
+        <h2 class="section-title"
+            data-i18n="connect_title">
+
             Let's Connect
+
         </h2>
 
 
-        <p>
+        <p data-i18n="connect_text">
 
             Follow my work, explore my repositories,
             and stay tuned for future projects
@@ -2180,9 +2285,10 @@ footer {
             <a
                 href="https://github.com/zerowuqing-ai"
                 target="_blank"
-                class="button primary"
-            >
+                class="button primary">
+
                 GitHub ↗
+
             </a>
 
         </div>
@@ -2206,13 +2312,17 @@ footer {
         Justin
     </div>
 
-    <div style="margin-top:8px;">
+    <div
+        style="margin-top:8px;"
+        data-i18n="footer_focus">
 
         AI · Cryptocurrency · Finance · Technology
 
     </div>
 
-    <div style="margin-top:10px;">
+    <div
+        style="margin-top:10px;"
+        data-i18n="footer_copyright">
 
         © 2026 Justin. All rights reserved.
 
@@ -2225,6 +2335,431 @@ footer {
 <script>
 
 /* =========================================================
+   LANGUAGE DATA
+========================================================= */
+
+const translations = {
+
+    en: {
+
+        nav_about: "About",
+        nav_focus: "Focus",
+        nav_projects: "Projects",
+        nav_philosophy: "Philosophy",
+
+        availability:
+            "Exploring · Building · Learning",
+
+        hero_title:
+            "AI × Cryptocurrency × Finance × Technology",
+
+        hero_description:
+            "An independent technology explorer focused on Artificial Intelligence, Cryptocurrency, Financial Markets, Quantitative Research, and Computer Science. I explore the intersection of intelligent systems, financial technology and software — turning ideas into experiments, research and real-world projects.",
+
+        explore_projects:
+            "Explore Projects ↓",
+
+        about_label:
+            "01 · ABOUT",
+
+        about_title:
+            "About Me",
+
+        about_description:
+            "Technology, markets and intelligence — three areas that continuously shape my thinking.",
+
+        about_p1:
+            "I'm Justin, an independent technology explorer interested in the rapidly changing intersection of AI, finance and technology.",
+
+        about_p2:
+            "My interests span artificial intelligence, cryptocurrency, blockchain, financial markets, quantitative research and software development.",
+
+        about_p3:
+            "This website and my GitHub profile serve as a public record of projects, experiments, research ideas and things I am currently learning.",
+
+        quote:
+            "\"Stay curious. Think independently. Build, test, learn, and improve.\"",
+
+        core_interests:
+            "Core Interests",
+
+        focus_label:
+            "02 · FOCUS",
+
+        focus_title:
+            "Areas of Focus",
+
+        focus_description:
+            "Exploring the intersection of intelligence, capital and computation.",
+
+        ai_title:
+            "Artificial Intelligence",
+
+        ai_text:
+            "Generative AI, large language models, intelligent agents, automation, machine learning and AI-powered applications.",
+
+        crypto_title:
+            "Cryptocurrency",
+
+        crypto_text:
+            "Digital assets, blockchain technology, decentralized systems, crypto markets and Web3 infrastructure.",
+
+        finance_title:
+            "Finance & Markets",
+
+        finance_text:
+            "Financial markets, market structure, investment research, risk analysis and financial technology.",
+
+        quant_title:
+            "Quantitative Research",
+
+        quant_text:
+            "Financial data analysis, systematic research, algorithmic strategies, modeling and data-driven decision systems.",
+
+        projects_label:
+            "03 · PROJECTS",
+
+        projects_title:
+            "Selected Projects",
+
+        projects_description:
+            "A growing collection of experiments, research systems and open-source projects.",
+
+        project1_title:
+            "AI Quant Research",
+
+        project1_text:
+            "Experimental research into combining artificial intelligence with financial data analysis and quantitative methods.",
+
+        project2_title:
+            "Crypto Analytics",
+
+        project2_text:
+            "Exploring cryptocurrency market data, blockchain ecosystems and quantitative approaches to digital asset research.",
+
+        project3_title:
+            "AI Financial Assistant",
+
+        project3_text:
+            "Exploring how large language models can assist with financial information, research workflows and data interpretation.",
+
+        project4_title:
+            "Open Source Lab",
+
+        project4_text:
+            "A collection of software experiments, automation tools, technical research and open-source development.",
+
+        journey_label:
+            "04 · JOURNEY",
+
+        journey_title:
+            "Learning Journey",
+
+        journey_description:
+            "Continuous learning through research, experimentation and building.",
+
+        journey1_title:
+            "Technology",
+
+        journey1_text:
+            "Exploring programming, software engineering, computer science and open-source technologies.",
+
+        journey2_title:
+            "Artificial Intelligence",
+
+        journey2_text:
+            "Studying modern AI systems, large language models, intelligent agents and AI applications.",
+
+        journey3_title:
+            "Finance & Quantitative Research",
+
+        journey3_text:
+            "Exploring financial markets, quantitative analysis, algorithmic strategies and data-driven research.",
+
+        journey4_title:
+            "The Next Chapter",
+
+        journey4_text:
+            "Building increasingly sophisticated systems at the intersection of AI, finance and technology.",
+
+        philosophy_label:
+            "05 · PHILOSOPHY",
+
+        philosophy_text:
+            "Technology changes how we build.<br>AI changes how we think.<br>Finance changes how value moves.",
+
+        connect_label:
+            "06 · CONNECT",
+
+        connect_title:
+            "Let's Connect",
+
+        connect_text:
+            "Follow my work, explore my repositories, and stay tuned for future projects across AI, finance and technology.",
+
+        footer_focus:
+            "AI · Cryptocurrency · Finance · Technology",
+
+        footer_copyright:
+            "© 2026 Justin. All rights reserved."
+    },
+
+
+    zh: {
+
+        nav_about:
+            "关于",
+
+        nav_focus:
+            "方向",
+
+        nav_projects:
+            "项目",
+
+        nav_philosophy:
+            "理念",
+
+        availability:
+            "探索 · 构建 · 学习",
+
+        hero_title:
+            "人工智能 × 加密货币 × 金融 × 科技",
+
+        hero_description:
+            "一名专注于人工智能、加密货币、金融市场、量化研究与计算机科学的独立技术探索者。我关注智能系统、金融科技与软件技术之间的交叉领域，并通过项目、实验和研究将想法转化为实际成果。",
+
+        explore_projects:
+            "探索项目 ↓",
+
+        about_label:
+            "01 · 关于",
+
+        about_title:
+            "关于我",
+
+        about_description:
+            "科技、市场与智能——三个持续影响我思考方式的领域。",
+
+        about_p1:
+            "我是 Justin，一名关注人工智能、金融与科技快速发展的独立技术探索者。",
+
+        about_p2:
+            "我的兴趣涵盖人工智能、加密货币、区块链、金融市场、量化研究以及软件开发。",
+
+        about_p3:
+            "这个网站和我的 GitHub 用于记录我的项目、技术实验、研究想法以及正在学习的内容。",
+
+        quote:
+            "「保持好奇，独立思考。构建、测试、学习，然后不断改进。」",
+
+        core_interests:
+            "核心兴趣",
+
+        focus_label:
+            "02 · 研究方向",
+
+        focus_title:
+            "关注领域",
+
+        focus_description:
+            "探索智能、资本与计算之间的交叉领域。",
+
+        ai_title:
+            "人工智能",
+
+        ai_text:
+            "生成式 AI、大语言模型、智能 Agent、自动化、机器学习以及 AI 应用。",
+
+        crypto_title:
+            "加密货币",
+
+        crypto_text:
+            "数字资产、区块链技术、去中心化系统、加密货币市场与 Web3 基础设施。",
+
+        finance_title:
+            "金融与市场",
+
+        finance_text:
+            "金融市场、市场结构、投资研究、风险分析以及金融科技。",
+
+        quant_title:
+            "量化研究",
+
+        quant_text:
+            "金融数据分析、系统化研究、算法策略、数学建模以及数据驱动的决策系统。",
+
+        projects_label:
+            "03 · 项目",
+
+        projects_title:
+            "精选项目",
+
+        projects_description:
+            "持续增长中的技术实验、研究系统与开源项目集合。",
+
+        project1_title:
+            "AI 量化研究",
+
+        project1_text:
+            "探索将人工智能与金融数据分析、量化方法结合的实验性研究。",
+
+        project2_title:
+            "加密货币分析",
+
+        project2_text:
+            "探索加密货币市场数据、区块链生态以及数字资产的数据分析方法。",
+
+        project3_title:
+            "AI 金融助手",
+
+        project3_text:
+            "探索利用大语言模型辅助金融信息整理、研究工作流以及数据分析。",
+
+        project4_title:
+            "开源实验室",
+
+        project4_text:
+            "记录软件实验、自动化工具、技术研究以及开源开发项目。",
+
+        journey_label:
+            "04 · 学习历程",
+
+        journey_title:
+            "持续探索",
+
+        journey_description:
+            "通过研究、实验与实际构建持续学习。",
+
+        journey1_title:
+            "计算机技术",
+
+        journey1_text:
+            "探索编程、软件工程、计算机科学以及开源技术。",
+
+        journey2_title:
+            "人工智能",
+
+        journey2_text:
+            "研究现代 AI 系统、大语言模型、智能 Agent 以及 AI 应用。",
+
+        journey3_title:
+            "金融与量化研究",
+
+        journey3_text:
+            "探索金融市场、量化分析、算法策略以及数据驱动的研究方法。",
+
+        journey4_title:
+            "下一阶段",
+
+        journey4_text:
+            "继续构建 AI、金融与科技交叉领域中更加复杂的系统。",
+
+        philosophy_label:
+            "05 · 思想",
+
+        philosophy_text:
+            "科技改变我们构建事物的方式。<br>AI 改变我们的思考方式。<br>金融改变价值流动的方式。",
+
+        connect_label:
+            "06 · 联系",
+
+        connect_title:
+            "保持联系",
+
+        connect_text:
+            "欢迎关注我的工作、浏览我的 GitHub 项目，并持续关注未来在 AI、金融与科技领域的项目。",
+
+        footer_focus:
+            "人工智能 · 加密货币 · 金融 · 科技",
+
+        footer_copyright:
+            "© 2026 Justin. 保留所有权利。"
+    }
+
+};
+
+
+/* =========================================================
+   LANGUAGE SWITCH FUNCTION
+========================================================= */
+
+function setLanguage(language) {
+
+    const elements =
+        document.querySelectorAll("[data-i18n]");
+
+
+    elements.forEach(
+        element => {
+
+            const key =
+                element.getAttribute("data-i18n");
+
+            if (
+                translations[language] &&
+                translations[language][key]
+            ) {
+
+                element.innerHTML =
+                    translations[language][key];
+
+            }
+
+        }
+    );
+
+
+    document.documentElement.lang =
+        language === "zh"
+            ? "zh-CN"
+            : "en";
+
+
+    document.getElementById("enBtn")
+        .classList.toggle(
+            "active",
+            language === "en"
+        );
+
+
+    document.getElementById("zhBtn")
+        .classList.toggle(
+            "active",
+            language === "zh"
+        );
+
+
+    localStorage.setItem(
+        "justin-language",
+        language
+    );
+
+
+    /* Update page title */
+
+    document.title =
+        language === "zh"
+            ? "Justin — AI × 加密货币 × 金融"
+            : "Justin — AI × Crypto × Finance";
+}
+
+
+/* =========================================================
+   INITIAL LANGUAGE
+========================================================= */
+
+const savedLanguage =
+    localStorage.getItem(
+        "justin-language"
+    );
+
+
+setLanguage(
+    savedLanguage || "en"
+);
+
+
+/* =========================================================
    MOUSE LIGHT
 ========================================================= */
 
@@ -2234,7 +2769,7 @@ const cursorLight =
 
 document.addEventListener(
     "mousemove",
-    (event) => {
+    event => {
 
         cursorLight.style.left =
             event.clientX + "px";
@@ -2256,10 +2791,10 @@ const revealElements =
 
 const observer =
     new IntersectionObserver(
-        (entries) => {
+        entries => {
 
             entries.forEach(
-                (entry) => {
+                entry => {
 
                     if (
                         entry.isIntersecting
@@ -2282,7 +2817,7 @@ const observer =
 
 
 revealElements.forEach(
-    (element) => {
+    element => {
 
         observer.observe(element);
 
@@ -2291,7 +2826,7 @@ revealElements.forEach(
 
 
 /* =========================================================
-   NAV BLUR EFFECT
+   NAVIGATION BLUR
 ========================================================= */
 
 const nav =
@@ -2302,10 +2837,12 @@ window.addEventListener(
     "scroll",
     () => {
 
-        if (window.scrollY > 50) {
+        if (
+            window.scrollY > 50
+        ) {
 
             nav.style.background =
-                "rgba(12,12,15,.75)";
+                "rgba(10,10,13,.78)";
 
         } else {
 
@@ -2318,7 +2855,6 @@ window.addEventListener(
 );
 
 </script>
-
 
 </body>
 </html>
