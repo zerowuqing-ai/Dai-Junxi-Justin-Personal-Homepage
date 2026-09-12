@@ -1,1361 +1,2324 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#050507">
+
     <meta name="description"
-          content="Justin Dai — AI × Cryptocurrency × Finance × Quantitative Research × Technology">
+          content="Justin — AI, Cryptocurrency, Finance, Quantitative Research and Technology.">
 
     <meta name="keywords"
-          content="Justin Dai, AI, Cryptocurrency, Crypto, Finance, Quantitative Trading, Artificial Intelligence, Technology">
+          content="Justin, zerowuqing-ai, AI, Artificial Intelligence, Cryptocurrency, Crypto, Finance, Quantitative Research, Technology">
 
     <meta name="author"
-          content="Justin Dai">
+          content="Justin">
 
-    <meta name="theme-color"
-          content="#0b0d12">
+    <meta property="og:title"
+          content="Justin — AI × Crypto × Finance">
 
-    <title>Justin Dai</title>
+    <meta property="og:description"
+          content="Independent technology explorer focused on AI, cryptocurrency, finance and quantitative research.">
 
-    <style>
+    <title>Justin — AI × Crypto × Finance</title>
 
-        /* =========================
-           基础设置
-        ========================= */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* =========================================================
+   RESET
+========================================================= */
 
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "SF Pro Display",
-                "SF Pro Text",
-                "Helvetica Neue",
-                Arial,
-                sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            color: #f5f5f7;
+html {
+    scroll-behavior: smooth;
+}
 
-            background:
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(0, 122, 255, 0.20),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(175, 82, 222, 0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 50% 90%,
-                    rgba(52, 199, 89, 0.12),
-                    transparent 35%
-                ),
-                #07080c;
+body {
 
-            min-height: 100vh;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
 
-            overflow-x: hidden;
-        }
+    color: #f5f5f7;
 
-        /* =========================
-           背景动态光晕
-        ========================= */
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(0,122,255,.22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(175,82,222,.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(52,199,89,.12),
+            transparent 35%
+        ),
+        #050507;
 
-        .orb {
-            position: fixed;
+    min-height: 100vh;
 
-            width: 300px;
-            height: 300px;
+    overflow-x: hidden;
 
-            border-radius: 50%;
+    line-height: 1.6;
+}
 
-            filter: blur(80px);
 
-            opacity: 0.35;
+/* =========================================================
+   SCROLLBAR
+========================================================= */
 
-            pointer-events: none;
+::-webkit-scrollbar {
+    width: 8px;
+}
 
-            z-index: -1;
+::-webkit-scrollbar-track {
+    background: #050507;
+}
 
-            animation: float 12s ease-in-out infinite;
-        }
+::-webkit-scrollbar-thumb {
 
-        .orb.one {
-            background: #007aff;
+    background:
+        rgba(255,255,255,.18);
 
-            top: 5%;
-            left: -100px;
-        }
+    border-radius: 10px;
+}
 
-        .orb.two {
-            background: #af52de;
 
-            top: 35%;
-            right: -120px;
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
-            animation-delay: -4s;
-        }
+.background {
 
-        .orb.three {
-            background: #34c759;
+    position: fixed;
 
-            bottom: -100px;
-            left: 30%;
+    inset: 0;
 
-            animation-delay: -8s;
-        }
+    pointer-events: none;
 
-        @keyframes float {
+    z-index: -10;
 
-            0%, 100% {
-                transform: translate3d(0, 0, 0) scale(1);
-            }
+    overflow: hidden;
+}
 
-            50% {
-                transform: translate3d(20px, -30px, 0) scale(1.1);
-            }
-        }
 
-        /* =========================
-           导航栏
-        ========================= */
+.orb {
 
-        nav {
-            position: fixed;
+    position: absolute;
 
-            top: 20px;
-            left: 50%;
+    width: 380px;
+    height: 380px;
 
-            transform: translateX(-50%);
+    border-radius: 50%;
 
-            width: min(1100px, calc(100% - 32px));
+    filter: blur(90px);
 
-            padding: 12px 18px;
+    opacity: .35;
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    animation:
+        floating 14s ease-in-out infinite;
+}
 
-            z-index: 1000;
 
-            background:
-                rgba(255,255,255,0.07);
+.orb-blue {
 
-            border:
-                1px solid rgba(255,255,255,0.12);
+    background: #007aff;
 
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
+    left: -120px;
+    top: 5%;
+}
 
-            border-radius: 24px;
 
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.12);
-        }
+.orb-purple {
 
-        .nav-logo {
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
+    background: #af52de;
 
-        .nav-links {
-            display: flex;
-            gap: 8px;
-        }
+    right: -150px;
+    top: 30%;
 
-        .nav-links a {
-            color: rgba(255,255,255,0.72);
+    animation-delay: -5s;
+}
 
-            text-decoration: none;
 
-            padding: 8px 13px;
+.orb-green {
 
-            border-radius: 14px;
+    background: #34c759;
 
-            font-size: 14px;
+    left: 35%;
+    bottom: -180px;
 
-            transition: 0.25s;
-        }
+    animation-delay: -9s;
+}
 
-        .nav-links a:hover {
-            color: white;
 
-            background:
-                rgba(255,255,255,0.10);
-        }
+@keyframes floating {
 
-        /* =========================
-           通用玻璃卡片
-        ========================= */
+    0%,
+    100% {
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+    }
 
-        .glass {
+    50% {
+        transform:
+            translate3d(35px,-35px,0)
+            scale(1.12);
+    }
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,0.12),
-                    rgba(255,255,255,0.045)
-                );
 
-            border:
-                1px solid rgba(255,255,255,0.13);
+/* =========================================================
+   MOUSE LIGHT
+========================================================= */
 
-            box-shadow:
-                0 20px 70px rgba(0,0,0,0.25),
-                inset 0 1px 0 rgba(255,255,255,0.10);
+.cursor-light {
 
-            backdrop-filter:
-                blur(30px) saturate(160%);
+    position: fixed;
 
-            -webkit-backdrop-filter:
-                blur(30px) saturate(160%);
+    width: 450px;
+    height: 450px;
 
-            border-radius: 32px;
-        }
+    border-radius: 50%;
 
-        /* =========================
-           主容器
-        ========================= */
+    pointer-events: none;
 
-        main {
-            width: min(1100px, calc(100% - 32px));
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,122,255,.08),
+            transparent 70%
+        );
 
-            margin: auto;
-        }
+    transform:
+        translate(-50%,-50%);
 
-        /* =========================
-           Hero
-        ========================= */
+    z-index: -1;
 
-        .hero {
+    transition:
+        left .15s ease,
+        top .15s ease;
+}
 
-            min-height: 100vh;
 
-            display: flex;
+/* =========================================================
+   CONTAINER
+========================================================= */
 
-            align-items: center;
+.container {
 
-            justify-content: center;
+    width:
+        min(1180px, calc(100% - 36px));
 
-            padding-top: 100px;
-        }
+    margin:
+        auto;
+}
 
-        .hero-card {
 
-            width: 100%;
+/* =========================================================
+   GLASS
+========================================================= */
 
-            padding: 70px 60px;
+.glass {
 
-            position: relative;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.105),
+            rgba(255,255,255,.035)
+        );
 
-            overflow: hidden;
-        }
+    border:
+        1px solid rgba(255,255,255,.12);
 
-        .hero-card::before {
+    box-shadow:
 
-            content: "";
+        0 30px 90px
+        rgba(0,0,0,.25),
 
-            position: absolute;
+        inset 0 1px 0
+        rgba(255,255,255,.12),
 
-            width: 350px;
-            height: 350px;
+        inset 0 -1px 0
+        rgba(255,255,255,.03);
 
-            border-radius: 50%;
+    backdrop-filter:
+        blur(35px)
+        saturate(170%);
 
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0,122,255,0.25),
-                    transparent 70%
-                );
+    -webkit-backdrop-filter:
+        blur(35px)
+        saturate(170%);
 
-            top: -180px;
-            right: -100px;
+    border-radius:
+        32px;
+}
 
-            pointer-events: none;
-        }
 
-        .status {
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-            display: inline-flex;
+.nav {
 
-            align-items: center;
+    position: fixed;
 
-            gap: 8px;
+    top: 18px;
 
-            padding: 8px 13px;
+    left: 50%;
 
-            border-radius: 50px;
+    transform:
+        translateX(-50%);
 
-            background:
-                rgba(52,199,89,0.10);
+    width:
+        min(1120px, calc(100% - 30px));
 
-            border:
-                1px solid rgba(52,199,89,0.20);
+    height: 64px;
 
-            color: #b7f5c5;
+    padding:
+        0 18px;
 
-            font-size: 13px;
+    display: flex;
 
-            margin-bottom: 25px;
-        }
+    align-items: center;
 
-        .status-dot {
+    justify-content: space-between;
 
-            width: 8px;
-            height: 8px;
+    z-index: 1000;
 
-            border-radius: 50%;
+    border-radius: 22px;
 
-            background: #34c759;
+    background:
+        rgba(20,20,23,.58);
 
-            box-shadow:
-                0 0 12px #34c759;
-        }
+    border:
+        1px solid rgba(255,255,255,.11);
 
-        .hero h1 {
+    backdrop-filter:
+        blur(28px)
+        saturate(180%);
 
-            font-size: clamp(46px, 8vw, 92px);
+    -webkit-backdrop-filter:
+        blur(28px)
+        saturate(180%);
 
-            line-height: 0.95;
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.28);
+}
 
-            letter-spacing: -0.065em;
 
-            margin-bottom: 22px;
+.logo {
 
-            background:
-                linear-gradient(
-                    110deg,
-                    #ffffff 20%,
-                    #b7c9ff 50%,
-                    #d5b6ff 80%
-                );
+    font-size: 18px;
 
-            -webkit-background-clip: text;
+    font-weight: 700;
 
-            -webkit-text-fill-color: transparent;
-        }
+    letter-spacing:
+        -.04em;
+}
 
-        .hero-subtitle {
 
-            font-size: clamp(18px, 3vw, 27px);
+.logo span {
 
-            color: rgba(255,255,255,0.78);
+    color:
+        rgba(255,255,255,.45);
 
-            margin-bottom: 25px;
+    font-weight:
+        500;
+}
 
-            letter-spacing: -0.02em;
-        }
 
-        .hero-description {
+.nav-links {
 
-            max-width: 760px;
+    display: flex;
 
-            color:
-                rgba(255,255,255,0.58);
+    gap: 5px;
+}
 
-            line-height: 1.8;
 
-            font-size: 16px;
+.nav-links a {
 
-            margin-bottom: 35px;
-        }
+    color:
+        rgba(255,255,255,.62);
 
-        .buttons {
+    text-decoration:
+        none;
 
-            display: flex;
+    font-size:
+        13px;
 
-            flex-wrap: wrap;
+    padding:
+        8px 13px;
 
-            gap: 12px;
-        }
+    border-radius:
+        14px;
 
-        .button {
+    transition:
+        .25s ease;
+}
 
-            display: inline-flex;
 
-            align-items: center;
+.nav-links a:hover {
 
-            justify-content: center;
+    color: white;
 
-            padding: 13px 20px;
+    background:
+        rgba(255,255,255,.08);
+}
 
-            border-radius: 18px;
 
-            text-decoration: none;
+/* =========================================================
+   HERO
+========================================================= */
 
-            font-weight: 600;
+.hero {
 
-            transition:
-                transform .25s,
-                background .25s;
+    min-height:
+        100vh;
 
-            border:
-                1px solid rgba(255,255,255,0.12);
-        }
+    display:
+        flex;
 
-        .button:hover {
+    align-items:
+        center;
 
-            transform:
-                translateY(-3px);
-        }
+    padding-top:
+        100px;
+}
 
-        .button.primary {
 
-            color: white;
+.hero-card {
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #007aff,
-                    #5856d6
-                );
+    width: 100%;
 
-            box-shadow:
-                0 10px 30px rgba(0,122,255,0.25);
-        }
+    padding:
+        85px 70px;
 
-        .button.secondary {
+    position:
+        relative;
 
-            color: white;
+    overflow:
+        hidden;
 
-            background:
-                rgba(255,255,255,0.07);
-        }
+    isolation:
+        isolate;
+}
 
-        /* =========================
-           Section
-        ========================= */
 
-        section {
+.hero-card::before {
 
-            padding: 80px 0;
-        }
+    content: "";
 
-        .section-title {
+    position:
+        absolute;
 
-            font-size: 40px;
+    width:
+        600px;
 
-            letter-spacing: -0.04em;
+    height:
+        600px;
 
-            margin-bottom: 12px;
-        }
+    border-radius:
+        50%;
 
-        .section-description {
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,122,255,.18),
+            transparent 70%
+        );
 
-            color:
-                rgba(255,255,255,0.55);
+    right:
+        -250px;
 
-            margin-bottom: 30px;
+    top:
+        -250px;
 
-            line-height: 1.7;
-        }
+    z-index:
+        -1;
+}
 
-        /* =========================
-           About
-        ========================= */
 
-        .about-grid {
+.hero-card::after {
 
-            display: grid;
+    content: "";
 
-            grid-template-columns:
-                1.4fr 0.8fr;
+    position:
+        absolute;
 
-            gap: 20px;
-        }
+    inset:
+        1px;
 
-        .about-card {
+    border-radius:
+        inherit;
 
-            padding: 35px;
-        }
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,.04),
+            transparent 40%
+        );
 
-        .about-card p {
+    pointer-events:
+        none;
+}
 
-            color:
-                rgba(255,255,255,0.68);
 
-            line-height: 1.9;
+.availability {
 
-            margin-bottom: 16px;
-        }
+    display:
+        inline-flex;
 
-        .quote {
+    align-items:
+        center;
 
-            margin-top: 25px;
+    gap:
+        9px;
 
-            padding: 20px;
+    padding:
+        8px 14px;
 
-            border-left:
-                3px solid #007aff;
+    border-radius:
+        50px;
 
-            background:
-                rgba(255,255,255,0.04);
+    background:
+        rgba(52,199,89,.09);
 
-            border-radius: 0 18px 18px 0;
+    border:
+        1px solid
+        rgba(52,199,89,.18);
 
-            color:
-                rgba(255,255,255,0.85);
+    color:
+        rgba(210,255,220,.85);
 
-            line-height: 1.7;
-        }
+    font-size:
+        13px;
 
-        /* =========================
-           Focus
-        ========================= */
+    margin-bottom:
+        28px;
+}
 
-        .focus-grid {
 
-            display: grid;
+.availability-dot {
 
-            grid-template-columns:
-                repeat(2, 1fr);
+    width:
+        8px;
 
-            gap: 18px;
-        }
+    height:
+        8px;
 
-        .focus-card {
+    border-radius:
+        50%;
 
-            padding: 28px;
+    background:
+        #34c759;
 
-            transition:
-                transform .25s,
-                border-color .25s;
-        }
+    box-shadow:
+        0 0 15px
+        rgba(52,199,89,.9);
+}
 
-        .focus-card:hover {
 
-            transform:
-                translateY(-5px);
+.hero h1 {
 
-            border-color:
-                rgba(255,255,255,0.25);
-        }
+    font-size:
+        clamp(64px, 11vw, 135px);
 
-        .icon {
+    line-height:
+        .88;
 
-            font-size: 30px;
+    letter-spacing:
+        -.075em;
 
-            margin-bottom: 15px;
-        }
+    margin-bottom:
+        30px;
 
-        .focus-card h3 {
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 10%,
+            #c9d6ff 48%,
+            #dcbaff 85%
+        );
 
-            margin-bottom: 10px;
+    -webkit-background-clip:
+        text;
 
-            font-size: 20px;
-        }
+    -webkit-text-fill-color:
+        transparent;
+}
 
-        .focus-card p {
 
-            color:
-                rgba(255,255,255,0.55);
+.hero-title {
 
-            line-height: 1.7;
+    font-size:
+        clamp(20px, 3vw, 31px);
 
-            font-size: 14px;
-        }
+    color:
+        rgba(255,255,255,.78);
 
-        /* =========================
-           Projects
-        ========================= */
+    letter-spacing:
+        -.025em;
 
-        .projects {
+    margin-bottom:
+        22px;
+}
 
-            display: grid;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+.hero-description {
 
-            gap: 20px;
-        }
+    max-width:
+        780px;
 
-        .project {
+    color:
+        rgba(255,255,255,.55);
 
-            padding: 30px;
+    font-size:
+        17px;
 
-            position: relative;
+    line-height:
+        1.9;
 
-            overflow: hidden;
+    margin-bottom:
+        35px;
+}
 
-            transition:
-                transform .25s;
-        }
 
-        .project:hover {
+.hero-description strong {
 
-            transform:
-                translateY(-5px);
-        }
+    color:
+        rgba(255,255,255,.88);
 
-        .project-number {
+    font-weight:
+        600;
+}
 
-            color:
-                rgba(255,255,255,0.25);
 
-            font-size: 13px;
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-            margin-bottom: 25px;
-        }
+.buttons {
 
-        .project h3 {
+    display:
+        flex;
 
-            font-size: 24px;
+    flex-wrap:
+        wrap;
 
-            margin-bottom: 12px;
-        }
+    gap:
+        12px;
+}
 
-        .project p {
 
-            color:
-                rgba(255,255,255,0.58);
+.button {
 
-            line-height: 1.7;
+    display:
+        inline-flex;
 
-            margin-bottom: 20px;
-        }
+    align-items:
+        center;
 
-        .tag {
+    justify-content:
+        center;
 
-            display: inline-block;
+    gap:
+        8px;
 
-            padding: 7px 11px;
+    padding:
+        13px 20px;
 
-            margin: 3px;
+    border-radius:
+        17px;
 
-            border-radius: 12px;
+    text-decoration:
+        none;
 
-            background:
-                rgba(255,255,255,0.07);
+    font-size:
+        14px;
 
-            border:
-                1px solid rgba(255,255,255,0.08);
+    font-weight:
+        600;
 
-            font-size: 12px;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
 
-            color:
-                rgba(255,255,255,0.68);
-        }
 
-        /* =========================
-           Philosophy
-        ========================= */
+.button:hover {
 
-        .philosophy {
+    transform:
+        translateY(-3px);
+}
 
-            padding: 60px 40px;
 
-            text-align: center;
-        }
+.primary {
 
-        .philosophy-text {
+    color:
+        white;
 
-            max-width: 800px;
+    background:
+        linear-gradient(
+            135deg,
+            #007aff,
+            #5856d6
+        );
 
-            margin: auto;
+    box-shadow:
+        0 12px 35px
+        rgba(0,122,255,.28);
+}
 
-            font-size:
-                clamp(24px, 4vw, 42px);
 
-            line-height: 1.3;
+.primary:hover {
 
-            letter-spacing: -0.035em;
+    box-shadow:
+        0 18px 45px
+        rgba(0,122,255,.4);
+}
 
-            background:
-                linear-gradient(
-                    110deg,
-                    #ffffff,
-                    #9caeff,
-                    #d5a9ff
-                );
 
-            -webkit-background-clip: text;
+.secondary {
 
-            -webkit-text-fill-color: transparent;
-        }
+    color:
+        rgba(255,255,255,.85);
 
-        /* =========================
-           Contact
-        ========================= */
+    background:
+        rgba(255,255,255,.07);
 
-        .contact {
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
 
-            text-align: center;
 
-            padding: 70px 30px;
-        }
+/* =========================================================
+   SECTION
+========================================================= */
 
-        .contact p {
+section {
 
-            color:
-                rgba(255,255,255,0.55);
+    padding:
+        95px 0;
+}
 
-            margin:
-                15px auto 30px;
 
-            max-width: 600px;
+.section-label {
 
-            line-height: 1.7;
-        }
+    color:
+        rgba(255,255,255,.38);
 
-        /* =========================
-           Footer
-        ========================= */
+    font-size:
+        12px;
 
-        footer {
+    letter-spacing:
+        .18em;
 
-            padding: 40px 20px 60px;
+    text-transform:
+        uppercase;
 
-            text-align: center;
+    margin-bottom:
+        12px;
+}
 
-            color:
-                rgba(255,255,255,0.35);
 
-            font-size: 13px;
-        }
+.section-title {
 
-        /* =========================
-           移动端
-        ========================= */
+    font-size:
+        clamp(36px, 6vw, 55px);
 
-        @media (max-width: 750px) {
+    letter-spacing:
+        -.055em;
 
-            nav {
+    line-height:
+        1;
 
-                top: 12px;
+    margin-bottom:
+        15px;
+}
 
-                width:
-                    calc(100% - 20px);
-            }
 
-            .nav-links {
+.section-description {
 
-                display: none;
-            }
+    color:
+        rgba(255,255,255,.48);
 
-            .hero {
+    max-width:
+        680px;
 
-                padding-top: 90px;
-            }
+    line-height:
+        1.8;
 
-            .hero-card {
+    margin-bottom:
+        35px;
+}
 
-                padding: 45px 25px;
-            }
 
-            .hero h1 {
+/* =========================================================
+   ABOUT
+========================================================= */
 
-                font-size: 55px;
-            }
+.about-grid {
 
-            .about-grid,
-            .focus-grid,
-            .projects {
+    display:
+        grid;
 
-                grid-template-columns: 1fr;
-            }
+    grid-template-columns:
+        1.5fr .8fr;
 
-            .about-card,
-            .focus-card,
-            .project {
+    gap:
+        20px;
+}
 
-                padding: 25px;
-            }
 
-            section {
+.about-card {
 
-                padding: 55px 0;
-            }
+    padding:
+        38px;
+}
 
-            .section-title {
 
-                font-size: 32px;
-            }
-        }
+.about-card p {
 
-    </style>
+    color:
+        rgba(255,255,255,.62);
+
+    line-height:
+        1.9;
+
+    margin-bottom:
+        18px;
+}
+
+
+.about-card strong {
+
+    color:
+        rgba(255,255,255,.9);
+}
+
+
+.quote {
+
+    margin-top:
+        30px;
+
+    padding:
+        20px 22px;
+
+    border-left:
+        3px solid
+        #007aff;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border-radius:
+        0 18px 18px 0;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size:
+        15px;
+}
+
+
+/* =========================================================
+   INTERESTS
+========================================================= */
+
+.interest-list {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        20px;
+}
+
+
+.interest {
+
+    padding:
+        8px 12px;
+
+    border-radius:
+        13px;
+
+    color:
+        rgba(255,255,255,.65);
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   FOCUS GRID
+========================================================= */
+
+.focus-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        18px;
+}
+
+
+.focus-card {
+
+    padding:
+        32px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+
+.focus-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(255,255,255,.22);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.045)
+        );
+}
+
+
+.icon {
+
+    font-size:
+        32px;
+
+    margin-bottom:
+        20px;
+}
+
+
+.focus-card h3 {
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        10px;
+
+    letter-spacing:
+        -.025em;
+}
+
+
+.focus-card p {
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:
+        20px;
+}
+
+
+.project {
+
+    padding:
+        32px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.project:hover {
+
+    transform:
+        translateY(-7px);
+}
+
+
+.project-number {
+
+    color:
+        rgba(255,255,255,.25);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        .15em;
+
+    margin-bottom:
+        24px;
+}
+
+
+.project h3 {
+
+    font-size:
+        25px;
+
+    letter-spacing:
+        -.035em;
+
+    margin-bottom:
+        12px;
+}
+
+
+.project p {
+
+    color:
+        rgba(255,255,255,.52);
+
+    line-height:
+        1.8;
+
+    font-size:
+        14px;
+
+    margin-bottom:
+        20px;
+}
+
+
+.tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        6px;
+}
+
+
+.tag {
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:
+        rgba(255,255,255,.58);
+
+    font-size:
+        11px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline {
+
+    position:
+        relative;
+
+    margin-top:
+        25px;
+}
+
+
+.timeline::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    left:
+        8px;
+
+    top:
+        8px;
+
+    bottom:
+        8px;
+
+    width:
+        1px;
+
+    background:
+        rgba(255,255,255,.12);
+}
+
+
+.timeline-item {
+
+    position:
+        relative;
+
+    padding:
+        0 0 35px 38px;
+}
+
+
+.timeline-dot {
+
+    position:
+        absolute;
+
+    left:
+        3px;
+
+    top:
+        6px;
+
+    width:
+        11px;
+
+    height:
+        11px;
+
+    border-radius:
+        50%;
+
+    background:
+        #007aff;
+
+    box-shadow:
+        0 0 18px
+        rgba(0,122,255,.7);
+}
+
+
+.timeline-item h3 {
+
+    font-size:
+        18px;
+
+    margin-bottom:
+        6px;
+}
+
+
+.timeline-item p {
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.philosophy {
+
+    padding:
+        85px 45px;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+}
+
+
+.philosophy::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(88,86,214,.18),
+            transparent 70%
+        );
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    pointer-events:
+        none;
+}
+
+
+.philosophy-text {
+
+    position:
+        relative;
+
+    max-width:
+        850px;
+
+    margin:
+        auto;
+
+    font-size:
+        clamp(25px, 4vw, 45px);
+
+    line-height:
+        1.3;
+
+    letter-spacing:
+        -.045em;
+
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff,
+            #aebfff,
+            #d7b0ff
+        );
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    text-align:
+        center;
+
+    padding:
+        75px 30px;
+}
+
+
+.contact p {
+
+    max-width:
+        650px;
+
+    margin:
+        15px auto 30px;
+
+    color:
+        rgba(255,255,255,.48);
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding:
+        35px 20px 60px;
+
+    text-align:
+        center;
+
+    color:
+        rgba(255,255,255,.3);
+
+    font-size:
+        12px;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+.reveal.active {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+
+        width:
+            calc(100% - 22px);
+    }
+
+
+    .nav {
+
+        top:
+            10px;
+
+        width:
+            calc(100% - 18px);
+
+        height:
+            58px;
+    }
+
+
+    .nav-links {
+
+        display:
+            none;
+    }
+
+
+    .hero {
+
+        padding-top:
+            85px;
+    }
+
+
+    .hero-card {
+
+        padding:
+            55px 27px;
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            65px;
+    }
+
+
+    .hero-description {
+
+        font-size:
+            15px;
+    }
+
+
+    .about-grid,
+    .focus-grid,
+    .projects {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .about-card,
+    .focus-card,
+    .project {
+
+        padding:
+            27px;
+    }
+
+
+    section {
+
+        padding:
+            65px 0;
+    }
+
+
+    .philosophy {
+
+        padding:
+            60px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <!-- 动态背景 -->
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-    <div class="orb three"></div>
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background">
+
+    <div class="orb orb-blue"></div>
+
+    <div class="orb orb-purple"></div>
+
+    <div class="orb orb-green"></div>
+
+</div>
+
+<div class="cursor-light"></div>
 
 
-    <!-- =========================
-         导航
-    ========================== -->
 
-    <nav>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-        <div class="nav-logo">
-            DJX
+<nav class="nav">
+
+    <div class="logo">
+        Justin <span>·</span> 01
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#focus">
+            Focus
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#philosophy">
+            Philosophy
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-card glass reveal">
+
+        <div class="availability">
+
+            <span class="availability-dot"></span>
+
+            Exploring · Building · Learning
+
         </div>
 
-        <div class="nav-links">
 
-            <a href="#about">
-                关于
+        <h1>
+            Justin
+        </h1>
+
+
+        <div class="hero-title">
+
+            AI × Cryptocurrency × Finance × Technology
+
+        </div>
+
+
+        <p class="hero-description">
+
+            An independent technology explorer focused on
+            <strong>Artificial Intelligence, Cryptocurrency,
+            Financial Markets, Quantitative Research,
+            and Computer Science.</strong>
+
+            I explore the intersection of intelligent systems,
+            financial technology and software — turning ideas
+            into experiments, research and real-world projects.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="https://github.com/zerowuqing-ai"
+                target="_blank"
+                class="button primary"
+            >
+                GitHub ↗
             </a>
 
-            <a href="#focus">
-                方向
-            </a>
 
-            <a href="#projects">
-                项目
-            </a>
-
-            <a href="#philosophy">
-                思想
+            <a
+                href="#projects"
+                class="button secondary"
+            >
+                Explore Projects ↓
             </a>
 
         </div>
 
-    </nav>
+    </div>
 
-
-    <main>
-
-
-        <!-- =========================
-             Hero
-        ========================== -->
-
-        <section class="hero">
-
-            <div class="hero-card glass">
-
-                <div class="status">
-
-                    <span class="status-dot"></span>
-
-                    Exploring · Building · Learning
-
-                </div>
-
-
-                <h1>
-                    代俊希
-                </h1>
-
-
-                <div class="hero-subtitle">
-
-                    Dai Junxi · AI × Crypto × Finance
-
-                </div>
-
-
-                <p class="hero-description">
-
-                    独立研究者与技术探索者，长期关注
-                    <strong>人工智能、加密货币、金融市场、
-                    量化交易与计算机技术</strong>。
-
-                    致力于探索 AI、金融数据与软件技术之间的交叉领域，
-                    并通过实际项目验证想法。
-
-                </p>
-
-
-                <div class="buttons">
-
-                    <!-- 修改为你的 GitHub -->
-                    <a
-                        class="button primary"
-                        href="https://github.com/你的用户名"
-                        target="_blank"
-                    >
-                        GitHub
-                    </a>
-
-
-                    <a
-                        class="button secondary"
-                        href="#projects"
-                    >
-                        查看项目
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
+</section>
 
 
 
-        <!-- =========================
-             About
-        ========================== -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-        <section id="about">
+<section id="about" class="reveal">
 
-            <h2 class="section-title">
-                About Me
-            </h2>
+    <div class="section-label">
+        01 · ABOUT
+    </div>
 
-            <p class="section-description">
-                关于我
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <p class="section-description">
+
+        Technology, markets and intelligence —
+        three areas that continuously shape my thinking.
+
+    </p>
+
+
+    <div class="about-grid">
+
+
+        <div class="about-card glass">
+
+            <p>
+
+                I'm <strong>Justin</strong>,
+                an independent technology explorer
+                interested in the rapidly changing
+                intersection of AI, finance and technology.
+
             </p>
 
 
-            <div class="about-grid">
+            <p>
 
+                My interests span artificial intelligence,
+                cryptocurrency, blockchain, financial markets,
+                quantitative research and software development.
 
-                <div class="about-card glass">
-
-                    <p>
-                        我是
-                        <strong>代俊希（Dai Junxi）</strong>，
-                        一个对技术、金融与人工智能保持长期兴趣的独立探索者。
-                    </p>
-
-                    <p>
-                        我关注人工智能的发展、数字资产与区块链、
-                        金融市场、量化研究以及计算机科学，
-                        尝试寻找这些领域之间可以产生的新连接。
-                    </p>
-
-                    <p>
-                        我的 GitHub 用于记录个人项目、
-                        技术实验、研究思路以及开源作品。
-                    </p>
-
-
-                    <div class="quote">
-
-                        「保持好奇，独立思考，
-                        用事实验证观点，用代码实现想法。」
-
-                    </div>
-
-                </div>
-
-
-                <div class="about-card glass">
-
-                    <h3>
-                        Core Interests
-                    </h3>
-
-                    <br>
-
-                    <p>
-                        Artificial Intelligence
-                    </p>
-
-                    <p>
-                        Cryptocurrency
-                    </p>
-
-                    <p>
-                        Financial Markets
-                    </p>
-
-                    <p>
-                        Quantitative Research
-                    </p>
-
-                    <p>
-                        Computer Science
-                    </p>
-
-                    <p>
-                        Open Source
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Research Focus
-        ========================== -->
-
-        <section id="focus">
-
-            <h2 class="section-title">
-                Research Focus
-            </h2>
-
-            <p class="section-description">
-                我目前关注的主要领域
             </p>
 
 
-            <div class="focus-grid">
+            <p>
 
+                This website and my GitHub profile serve as
+                a public record of projects, experiments,
+                research ideas and things I am currently learning.
 
-                <div class="focus-card glass">
-
-                    <div class="icon">
-                        🤖
-                    </div>
-
-                    <h3>
-                        Artificial Intelligence
-                    </h3>
-
-                    <p>
-                        AI、机器学习、智能系统、
-                        AI Agent、自动化与生成式人工智能。
-                    </p>
-
-                </div>
-
-
-                <div class="focus-card glass">
-
-                    <div class="icon">
-                        ₿
-                    </div>
-
-                    <h3>
-                        Cryptocurrency
-                    </h3>
-
-                    <p>
-                        加密货币、区块链、数字资产、
-                        Web3 与去中心化技术。
-                    </p>
-
-                </div>
-
-
-                <div class="focus-card glass">
-
-                    <div class="icon">
-                        📈
-                    </div>
-
-                    <h3>
-                        Finance
-                    </h3>
-
-                    <p>
-                        金融市场、投资研究、
-                        市场结构、风险管理与金融科技。
-                    </p>
-
-                </div>
-
-
-                <div class="focus-card glass">
-
-                    <div class="icon">
-                        📊
-                    </div>
-
-                    <h3>
-                        Quantitative Research
-                    </h3>
-
-                    <p>
-                        数据分析、量化策略、
-                        算法交易与金融数据建模。
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             Projects
-        ========================== -->
-
-        <section id="projects">
-
-            <h2 class="section-title">
-                Projects
-            </h2>
-
-            <p class="section-description">
-                项目与技术实验
             </p>
 
 
-            <div class="projects">
+            <div class="quote">
 
-
-                <div class="project glass">
-
-                    <div class="project-number">
-                        PROJECT 01
-                    </div>
-
-                    <h3>
-                        AI Quant System
-                    </h3>
-
-                    <p>
-                        探索人工智能与量化交易结合的实验性系统，
-                        用于金融数据分析、市场研究与策略辅助。
-                    </p>
-
-                    <span class="tag">
-                        Python
-                    </span>
-
-                    <span class="tag">
-                        AI
-                    </span>
-
-                    <span class="tag">
-                        Quant
-                    </span>
-
-                    <span class="tag">
-                        Finance
-                    </span>
-
-                </div>
-
-
-
-                <div class="project glass">
-
-                    <div class="project-number">
-                        PROJECT 02
-                    </div>
-
-                    <h3>
-                        Crypto Research
-                    </h3>
-
-                    <p>
-                        加密货币市场数据研究与分析，
-                        探索市场结构、价格行为和数据驱动分析方法。
-                    </p>
-
-                    <span class="tag">
-                        Crypto
-                    </span>
-
-                    <span class="tag">
-                        Blockchain
-                    </span>
-
-                    <span class="tag">
-                        Data
-                    </span>
-
-                </div>
-
-
-
-                <div class="project glass">
-
-                    <div class="project-number">
-                        PROJECT 03
-                    </div>
-
-                    <h3>
-                        AI Financial Assistant
-                    </h3>
-
-                    <p>
-                        探索使用大型语言模型辅助金融信息整理、
-                        市场研究与投资分析工作流。
-                    </p>
-
-                    <span class="tag">
-                        LLM
-                    </span>
-
-                    <span class="tag">
-                        AI
-                    </span>
-
-                    <span class="tag">
-                        Finance
-                    </span>
-
-                </div>
-
-
-
-                <div class="project glass">
-
-                    <div class="project-number">
-                        PROJECT 04
-                    </div>
-
-                    <h3>
-                        Open Source Experiments
-                    </h3>
-
-                    <p>
-                        记录个人的软件开发、自动化、
-                        AI 与计算机技术实验。
-                    </p>
-
-                    <span class="tag">
-                        Python
-                    </span>
-
-                    <span class="tag">
-                        Open Source
-                    </span>
-
-                    <span class="tag">
-                        Technology
-                    </span>
-
-                </div>
-
+                "Stay curious. Think independently.
+                Build, test, learn, and improve."
 
             </div>
 
-        </section>
+        </div>
 
 
 
-        <!-- =========================
-             Philosophy
-        ========================== -->
+        <div class="about-card glass">
 
-        <section id="philosophy">
-
-            <div class="philosophy glass">
-
-                <div class="philosophy-text">
-
-                    Technology changes how we build.<br>
-
-                    AI changes how we think.<br>
-
-                    Finance changes how value moves.
-
-                </div>
-
-            </div>
-
-        </section>
+            <h3>
+                Core Interests
+            </h3>
 
 
+            <div class="interest-list">
 
-        <!-- =========================
-             Contact
-        ========================== -->
+                <span class="interest">
+                    Artificial Intelligence
+                </span>
 
-        <section>
+                <span class="interest">
+                    Machine Learning
+                </span>
 
-            <div class="contact glass">
+                <span class="interest">
+                    Cryptocurrency
+                </span>
 
-                <h2 class="section-title">
-                    Let's Connect
-                </h2>
+                <span class="interest">
+                    Blockchain
+                </span>
 
-                <p>
+                <span class="interest">
+                    Financial Markets
+                </span>
 
-                    欢迎关注我的 GitHub，
-                    这里会持续更新我的项目、研究和技术实验。
+                <span class="interest">
+                    Quantitative Research
+                </span>
 
-                </p>
+                <span class="interest">
+                    Python
+                </span>
 
-
-                <div class="buttons"
-                     style="justify-content:center;">
-
-                    <a
-                        class="button primary"
-                        href="https://github.com/你的用户名"
-                        target="_blank"
-                    >
-                        Visit GitHub
-                    </a>
-
-                </div>
+                <span class="interest">
+                    Open Source
+                </span>
 
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
-    </main>
+
+<!-- =====================================================
+     FOCUS
+===================================================== -->
+
+<section id="focus" class="reveal">
+
+    <div class="section-label">
+        02 · FOCUS
+    </div>
+
+    <h2 class="section-title">
+        Areas of Focus
+    </h2>
+
+    <p class="section-description">
+
+        Exploring the intersection of intelligence,
+        capital and computation.
+
+    </p>
+
+
+    <div class="focus-grid">
+
+
+        <div class="focus-card glass">
+
+            <div class="icon">
+                ◉
+            </div>
+
+            <h3>
+                Artificial Intelligence
+            </h3>
+
+            <p>
+
+                Generative AI, large language models,
+                intelligent agents, automation,
+                machine learning and AI-powered applications.
+
+            </p>
+
+        </div>
 
 
 
-    <!-- =========================
-         Footer
-    ========================== -->
+        <div class="focus-card glass">
 
-    <footer>
+            <div class="icon">
+                ₿
+            </div>
 
-        © 2026 Justin Dai ·
-        AI · Crypto · Finance · Technology
+            <h3>
+                Cryptocurrency
+            </h3>
 
-    </footer>
+            <p>
+
+                Digital assets, blockchain technology,
+                decentralized systems, crypto markets
+                and Web3 infrastructure.
+
+            </p>
+
+        </div>
 
 
-    <!-- =========================
-         简单的鼠标液态光效
-    ========================== -->
 
-    <script>
+        <div class="focus-card glass">
 
-        document.addEventListener(
-            "mousemove",
-            function(e) {
+            <div class="icon">
+                ↗
+            </div>
 
-                const x =
-                    e.clientX / window.innerWidth * 100;
+            <h3>
+                Finance & Markets
+            </h3>
 
-                const y =
-                    e.clientY / window.innerHeight * 100;
+            <p>
 
-                document.body.style.background =
-                    `
-                    radial-gradient(
-                        circle at ${x}% ${y}%,
-                        rgba(0,122,255,0.10),
-                        transparent 30%
-                    ),
-                    radial-gradient(
-                        circle at 15% 15%,
-                        rgba(0,122,255,0.20),
-                        transparent 30%
-                    ),
-                    radial-gradient(
-                        circle at 85% 20%,
-                        rgba(175,82,222,0.18),
-                        transparent 30%
-                    ),
-                    #07080c
-                    `;
+                Financial markets, market structure,
+                investment research, risk analysis
+                and financial technology.
 
-            }
-        );
+            </p>
 
-    </script>
+        </div>
+
+
+
+        <div class="focus-card glass">
+
+            <div class="icon">
+                ∑
+            </div>
+
+            <h3>
+                Quantitative Research
+            </h3>
+
+            <p>
+
+                Financial data analysis, systematic research,
+                algorithmic strategies, modeling
+                and data-driven decision systems.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects" class="reveal">
+
+    <div class="section-label">
+        03 · PROJECTS
+    </div>
+
+    <h2 class="section-title">
+        Selected Projects
+    </h2>
+
+    <p class="section-description">
+
+        A growing collection of experiments,
+        research systems and open-source projects.
+
+    </p>
+
+
+    <div class="projects">
+
+
+        <div class="project glass">
+
+            <div class="project-number">
+                PROJECT 01
+            </div>
+
+            <h3>
+                AI Quant Research
+            </h3>
+
+            <p>
+
+                Experimental research into combining
+                artificial intelligence with financial
+                data analysis and quantitative methods.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">Python</span>
+
+                <span class="tag">AI</span>
+
+                <span class="tag">Quant</span>
+
+                <span class="tag">Finance</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project glass">
+
+            <div class="project-number">
+                PROJECT 02
+            </div>
+
+            <h3>
+                Crypto Analytics
+            </h3>
+
+            <p>
+
+                Exploring cryptocurrency market data,
+                blockchain ecosystems and quantitative
+                approaches to digital asset research.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">Crypto</span>
+
+                <span class="tag">Blockchain</span>
+
+                <span class="tag">Data</span>
+
+                <span class="tag">Research</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project glass">
+
+            <div class="project-number">
+                PROJECT 03
+            </div>
+
+            <h3>
+                AI Financial Assistant
+            </h3>
+
+            <p>
+
+                Exploring how large language models
+                can assist with financial information,
+                research workflows and data interpretation.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">LLM</span>
+
+                <span class="tag">AI</span>
+
+                <span class="tag">Finance</span>
+
+                <span class="tag">Automation</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="project glass">
+
+            <div class="project-number">
+                PROJECT 04
+            </div>
+
+            <h3>
+                Open Source Lab
+            </h3>
+
+            <p>
+
+                A collection of software experiments,
+                automation tools, technical research
+                and open-source development.
+
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">Open Source</span>
+
+                <span class="tag">Python</span>
+
+                <span class="tag">Software</span>
+
+                <span class="tag">Technology</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section class="reveal">
+
+    <div class="section-label">
+        04 · JOURNEY
+    </div>
+
+    <h2 class="section-title">
+        Learning Journey
+    </h2>
+
+    <p class="section-description">
+
+        Continuous learning through research,
+        experimentation and building.
+
+    </p>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Technology
+            </h3>
+
+            <p>
+
+                Exploring programming, software engineering,
+                computer science and open-source technologies.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Artificial Intelligence
+            </h3>
+
+            <p>
+
+                Studying modern AI systems,
+                large language models,
+                intelligent agents and AI applications.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                Finance & Quantitative Research
+            </h3>
+
+            <p>
+
+                Exploring financial markets,
+                quantitative analysis,
+                algorithmic strategies and data-driven research.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <h3>
+                The Next Chapter
+            </h3>
+
+            <p>
+
+                Building increasingly sophisticated systems
+                at the intersection of AI, finance and technology.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PHILOSOPHY
+===================================================== -->
+
+<section id="philosophy" class="reveal">
+
+    <div class="philosophy glass">
+
+        <div class="section-label">
+            05 · PHILOSOPHY
+        </div>
+
+
+        <div class="philosophy-text">
+
+            Technology changes how we build.<br>
+
+            AI changes how we think.<br>
+
+            Finance changes how value moves.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="reveal">
+
+    <div class="contact glass">
+
+        <div class="section-label">
+            06 · CONNECT
+        </div>
+
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+
+        <p>
+
+            Follow my work, explore my repositories,
+            and stay tuned for future projects
+            across AI, finance and technology.
+
+        </p>
+
+
+        <div class="buttons"
+             style="justify-content:center;">
+
+            <a
+                href="https://github.com/zerowuqing-ai"
+                target="_blank"
+                class="button primary"
+            >
+                GitHub ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div>
+        Justin
+    </div>
+
+    <div style="margin-top:8px;">
+
+        AI · Cryptocurrency · Finance · Technology
+
+    </div>
+
+    <div style="margin-top:10px;">
+
+        © 2026 Justin. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   MOUSE LIGHT
+========================================================= */
+
+const cursorLight =
+    document.querySelector(".cursor-light");
+
+
+document.addEventListener(
+    "mousemove",
+    (event) => {
+
+        cursorLight.style.left =
+            event.clientX + "px";
+
+        cursorLight.style.top =
+            event.clientY + "px";
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(
+    (element) => {
+
+        observer.observe(element);
+
+    }
+);
+
+
+/* =========================================================
+   NAV BLUR EFFECT
+========================================================= */
+
+const nav =
+    document.querySelector(".nav");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 50) {
+
+            nav.style.background =
+                "rgba(12,12,15,.75)";
+
+        } else {
+
+            nav.style.background =
+                "rgba(20,20,23,.58)";
+
+        }
+
+    }
+);
+
+</script>
+
 
 </body>
 </html>
